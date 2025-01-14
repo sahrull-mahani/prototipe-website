@@ -1,15 +1,34 @@
-// Set interval to switch tabs every 5 seconds
-// const intervalId = setInterval(function () {
-//     const currentTab = $('.nav-link.active')
-//     let nextTab = currentTab.parent().next().find('button')
+// myIntervalFunction = (running) => {
+//   if (running) {
+//     // Set interval to switch tabs every 5 seconds
+//     const intervalID = setInterval(function () {
+//       const currentTab = $('.nav-link.active')
+//       let nextTab = currentTab.parent().next().find('button')
 
-//     // If next tab doesn't exist, go back to the first one
-//     if (!nextTab.length) {
+//       // If next tab doesn't exist, go back to the first one
+//       if (!nextTab.length) {
 //         nextTab = $('#pills-tab .nav-item:first .nav-link')
-//     }
+//       }
 
-//     nextTab.trigger('click')
-// }, 5000)
+//       nextTab.trigger('click')
+//     }, 5000)
+//   }else{
+
+//   }
+// }
+
+// myIntervalFunction(true)
+
+// $('#hero .select2').on('select2:open', function (e) {
+//   // alert('focus')
+//   myIntervalFunction(false)
+// })
+// $('#hero').find('input').on('focus', function () {
+//   // alert('focus')
+//   myIntervalFunction(false)
+// }).on('focusout', function () {
+//   myIntervalFunction(true)
+// })
 
 $('input[type="number"]').on('keyup', function () {
   if (this.value < $(this).attr('min')) {
@@ -31,12 +50,15 @@ const formatTemplate = (kota) => {
   )
 }
 
+$('.select2.hotel').attr('data-placeholder', $('.select2.hotel').attr('placeholder'))
+$('.select2.airports#from').attr('data-placeholder', $('.select2.airports#from').attr('placeholder'))
+$('.select2.airports#to').attr('data-placeholder', $('.select2.airports#to').attr('placeholder'))
 $('.select2').select2({
   theme: "bootstrap-5",
   containerCssClass: "select2--small",
   dropdownCssClass: "select2--small",
   allowClear: true,
-  placeholder: 'Kota, Hotel, atau Landmark',
+  // placeholder: 'Kota, Hotel, atau Landmark',
   templateResult: formatTemplate,
   data: [
     {
@@ -1046,15 +1068,59 @@ $(window).scroll(function () {
   })
 })
 
-$('input[name="dates"]').daterangepicker({
+$('input.dates').daterangepicker({
   opens: 'left',
   startDate: moment().add(2, 'days'),
   endDate: moment().add(3, 'days'),
   minDate: moment().format('DD MM YYYY'),
+  alwaysShowCalendars: true,
+  ranges: {
+    'Hari ini': [moment(), moment().add(1, 'days')],
+    // 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+    'Minggu ini': [moment(), moment().add(6, 'days')],
+    '30 hari': [moment(), moment().add(29, 'days')],
+    // 'This Month': [moment().startOf('month'), moment().endOf('month')],
+    // 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+  },
   locale: {
     format: 'DD MMM Y',
     separator: " ➡️ ",
+    applyLabel: "Terapkan",
+    cancelLabel: "Batal",
+    fromLabel: "Dari",
+    toLabel: "Sampai",
+    customRangeLabel: "Menyesuaikan",
   }
 }, function (start, end, label) {
   console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+})
+
+$('input.date').daterangepicker({
+  singleDatePicker: true,
+  opens: 'left',
+  startDate: moment().add(2, 'days'),
+  minDate: moment().format('DD MM YYYY'),
+  locale: {
+    format: 'DD MMM Y',
+    applyLabel: "Terapkan",
+    cancelLabel: "Batal",
+    fromLabel: "Dari",
+    toLabel: "Sampai",
+    customRangeLabel: "Menyesuaikan",
+  }
+}, function (start, end, label) {
+  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+})
+
+$('.input-number').find('.plus').on('click', function () {
+  const id = $(this).parent().attr('id')
+  const input = $(`input[data-number="${id}"]`).val()
+  $(this).next().attr('role', 'button')
+  $(`input[data-number="${id}"]`).val(!input ? 1 : parseInt(input) + 1)
+})
+$('.input-number').find('.minus').on('click', function () {
+  const id = $(this).parent().attr('id')
+  const input = $(`input[data-number="${id}"]`).val()
+  const value = parseInt(input)
+  $(`input[data-number="${id}"]`).val(value == 1 ? 1 : value - 1)
 })
