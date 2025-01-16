@@ -638,7 +638,7 @@ campaignsFlight.result.sections[0].cards.map(({ content }) => {
         `)
 })
 
-const swiper = new Swiper('.promo .swiper', {
+new Swiper('.promo .swiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
@@ -1092,7 +1092,7 @@ $('input.dates').daterangepicker({
     customRangeLabel: "Menyesuaikan",
   }
 }, function (start, end, label) {
-  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'))
 })
 
 $('input.date').daterangepicker({
@@ -1109,7 +1109,7 @@ $('input.date').daterangepicker({
     customRangeLabel: "Menyesuaikan",
   }
 }, function (start, end, label) {
-  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'))
 })
 
 $('.input-number').find('.plus').on('click', function () {
@@ -1124,3 +1124,399 @@ $('.input-number').find('.minus').on('click', function () {
   const value = parseInt(input)
   $(`input[data-number="${id}"]`).val(value == 1 ? 1 : value - 1)
 })
+
+
+new Swiper('.hotels .swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: false,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    // dynamicBullets: true,
+    // type: "progressbar",
+  },
+
+  slidesPerView: 3,
+  spaceBetween: 30,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+})
+
+const GTLOhotels = {
+  "results": [
+    {
+      "hotelId": 16541155,
+      "hotelName": "Aston Gorontalo Hotel & Villas",
+      "starRating": 4.0,
+      "reviewScore": 9.0,
+      "reviewCount": 118,
+      "currency": "USD",
+      "dailyRate": 42.68,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://q-xx.bstatic.com/xdata/images/hotel/840x460/269243475.jpg?k=cd838a289e3871341fce28d01791f3b710940c6c4c8f4ec00a72e1f5a40d807a&o=",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=16541155&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": false,
+      "latitude": 0.5440700054168701,
+      "longitude": 123.0506820678711
+    },
+    {
+      "hotelId": 42110121,
+      "hotelName": "Yulia Hotel Managed by HIG",
+      "starRating": 3.0,
+      "reviewScore": 9.2,
+      "reviewCount": 189,
+      "currency": "USD",
+      "dailyRate": 28.23,
+      "crossedOutRate": 36.81,
+      "discountPercentage": 20.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/42110121/-1/69cea0c339b7b042b182a4b5696e4b29.jpg?ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=42110121&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.5341647863388062,
+      "longitude": 123.06031799316406
+    },
+    {
+      "hotelId": 50608949,
+      "hotelName": "FOX Hotel Gorontalo",
+      "starRating": 4.0,
+      "reviewScore": 8.7,
+      "reviewCount": 75,
+      "currency": "USD",
+      "dailyRate": 30.37,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/50608949/0/01168d39a80fd4c40cffeefca487c05d.jpg?ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=50608949&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.5378188,
+      "longitude": 123.062645
+    },
+    {
+      "hotelId": 8262760,
+      "hotelName": "RedDoorz near TVRI Gorontalo",
+      "starRating": 2.0,
+      "reviewScore": 8.0,
+      "reviewCount": 169,
+      "currency": "USD",
+      "dailyRate": 6.35,
+      "crossedOutRate": 30.63,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/8262760/-1/a5714db5c5074c91c81c11bc6360c182.jpg?ca=13&ce=1&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=8262760&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": false,
+      "freeWifi": true,
+      "latitude": 0.5601135481481468,
+      "longitude": 123.04841770683265
+    },
+    {
+      "hotelId": 264270,
+      "hotelName": "Grand Q Hotel Gorontalo",
+      "starRating": 4.0,
+      "reviewScore": 8.3,
+      "reviewCount": 194,
+      "currency": "USD",
+      "dailyRate": 35.18,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/264270/-1/23c8755af000c9f9459864bba4f75567.jpg?ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=264270&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.533472936077578,
+      "longitude": 123.060092926025
+    },
+    {
+      "hotelId": 640472,
+      "hotelName": "Amaris Hotel Gorontalo",
+      "starRating": 2.0,
+      "reviewScore": 8.2,
+      "reviewCount": 238,
+      "currency": "USD",
+      "dailyRate": 25.87,
+      "crossedOutRate": 36.75,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/640472/-1/9555598912e2b84080f948af68bc6104.png?ca=21&ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=640472&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.53662,
+      "longitude": 123.06322
+    },
+    {
+      "hotelId": 45461910,
+      "hotelName": "Wisma 88",
+      "starRating": 0.0,
+      "reviewScore": 7.7,
+      "reviewCount": 49,
+      "currency": "USD",
+      "dailyRate": 9.91,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/45461910/-1/6b5b71079c0062aa699a06ff081403fd.jpg?ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=45461910&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": false,
+      "latitude": 0.552196823746981,
+      "longitude": 123.06412
+    },
+    {
+      "hotelId": 9758035,
+      "hotelName": "RedDoorz Syariah near Universitas Negeri Gorontalo 2",
+      "starRating": 2.0,
+      "reviewScore": 7.7,
+      "reviewCount": 91,
+      "currency": "USD",
+      "dailyRate": 9.94,
+      "crossedOutRate": 30.63,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/9758035/-1/e38fd06a460edbc330fd58c8fcc87b02.jpg?ca=9&ce=1&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=9758035&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": false,
+      "freeWifi": true,
+      "latitude": 0.5506597357921679,
+      "longitude": 123.06389200204467
+    },
+    {
+      "hotelId": 7695647,
+      "hotelName": "Harry & Mimin Homestay",
+      "starRating": 0.0,
+      "reviewScore": 8.8,
+      "reviewCount": 23,
+      "currency": "USD",
+      "dailyRate": 15.01,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://q-xx.bstatic.com/xdata/images/hotel/840x460/373141185.jpg?k=2185124c82eb65fa230d283911323185d28948897a2cfd81fc3a067312aa7807&o=",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=7695647&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.5312399864196777,
+      "longitude": 123.05518341064453
+    },
+    {
+      "hotelId": 489846,
+      "hotelName": "Sumber Ria Hotel",
+      "starRating": 2.0,
+      "reviewScore": 8.7,
+      "reviewCount": 105,
+      "currency": "USD",
+      "dailyRate": 11.12,
+      "crossedOutRate": 14.09,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/489846/-1/e4af2d4609d4878feffdbeaa4ef3750a.jpg?ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=489846&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.543627321720123,
+      "longitude": 123.059585571289
+    },
+    {
+      "hotelId": 8262696,
+      "hotelName": "RedDoorz Plus Syariah @ Pentadio Gorontalo",
+      "starRating": 3.0,
+      "reviewScore": 7.2,
+      "reviewCount": 55,
+      "currency": "USD",
+      "dailyRate": 7.81,
+      "crossedOutRate": 33.63,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/8262696/-1/36558fbb3c5e87335d3c2b3a72fa5ca2.jpg?ca=9&ce=1&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=8262696&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": false,
+      "freeWifi": true,
+      "latitude": 0.6190157715143733,
+      "longitude": 123.01277782100976
+    },
+    {
+      "hotelId": 4897976,
+      "hotelName": "The Garden Hotel",
+      "starRating": 0.0,
+      "reviewScore": 7.8,
+      "reviewCount": 161,
+      "currency": "USD",
+      "dailyRate": 26.35,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/4897976/-1/5e368957cf02d6707dae934b8d9d3c6a.jpg?ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=4897976&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.535875,
+      "longitude": 123.06401099999994
+    },
+    {
+      "hotelId": 50042676,
+      "hotelName": "Maherza Syariah Homestay Gorontalo RedPartner",
+      "starRating": 2.0,
+      "reviewScore": 7.9,
+      "reviewCount": 18,
+      "currency": "USD",
+      "dailyRate": 11.86,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/50042676/-1/29d136bdd3bf39c2c0e14f1eb2d51ef4.jpg?ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=50042676&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": false,
+      "freeWifi": true,
+      "latitude": 0.5503027,
+      "longitude": 123.06365
+    },
+    {
+      "hotelId": 335375,
+      "hotelName": "Eljie Hotel",
+      "starRating": 1.0,
+      "reviewScore": 7.1,
+      "reviewCount": 119,
+      "currency": "USD",
+      "dailyRate": 17.23,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/335375/-1/9d56f1d81b8c935d9dd0f1599b40d55f.jpg?ca=9&ce=1&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=335375&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.5538488052448097,
+      "longitude": 123.05268466472626
+    },
+    {
+      "hotelId": 47850609,
+      "hotelName": "Pondok Wisata Botu Barani",
+      "starRating": 0.0,
+      "reviewScore": 4.2,
+      "reviewCount": 2,
+      "currency": "USD",
+      "dailyRate": 35.08,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://q-xx.bstatic.com/xdata/images/hotel/840x460/510053166.jpg?k=46eed7c4371b8603752c57da7e5f95be4add4798bf95a2a70a29c394950da97e&o=",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=47850609&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.4746699929237366,
+      "longitude": 123.10106658935547
+    },
+    {
+      "hotelId": 19932463,
+      "hotelName": "The One Hotel Gorontalo Mitra RedDoorz",
+      "starRating": 2.0,
+      "reviewScore": 6.6,
+      "reviewCount": 14,
+      "currency": "USD",
+      "dailyRate": 15.34,
+      "crossedOutRate": 25.34,
+      "discountPercentage": 0.0,
+      "imageURL": "http://pix8.agoda.net/hotelImages/19932463/0/5b5e067c5c27c1d6466c5293cd4af102.jpg?ce=0&s=800x600",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=19932463&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": false,
+      "freeWifi": true,
+      "latitude": 0.5746667,
+      "longitude": 123.059363
+    },
+    {
+      "hotelId": 55207176,
+      "hotelName": "Pondok Wisata Hiu Paus Botubarani gorontalo",
+      "starRating": 0.0,
+      "reviewScore": 7.3,
+      "reviewCount": 3,
+      "currency": "USD",
+      "dailyRate": 25.26,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://q-xx.bstatic.com/xdata/images/hotel/840x460/547936113.jpg?k=4567e17b1871d43cce063e6ae1ab9547930c87effd269b6d95446d6c1b0e807e&o=",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=55207176&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": false,
+      "latitude": 0.4763199985027313,
+      "longitude": 123.10053253173828
+    },
+    {
+      "hotelId": 7698962,
+      "hotelName": "Sunset Homestay by Harry & Mimin",
+      "starRating": 0.0,
+      "reviewScore": 8.6,
+      "reviewCount": 6,
+      "currency": "USD",
+      "dailyRate": 19.43,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://q-xx.bstatic.com/xdata/images/hotel/840x460/276256324.jpg?k=9e09760458c0fd9db54d498c5e1c17bdb4b9382b644e60798b3a6891fb606db7&o=",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=7698962&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": true,
+      "latitude": 0.6113700270652771,
+      "longitude": 123.01483917236328
+    },
+    {
+      "hotelId": 59305878,
+      "hotelName": "Ipoeng Rest Bed & Breakfast",
+      "starRating": 0.0,
+      "reviewScore": 10.0,
+      "reviewCount": 1,
+      "currency": "USD",
+      "dailyRate": 13.92,
+      "crossedOutRate": 0,
+      "discountPercentage": 0.0,
+      "imageURL": "http://q-xx.bstatic.com/xdata/images/hotel/840x460/578567224.jpg?k=1f52f30bea1a6fff58cd488e4dc64c0d72b7c529eb54097fb6fabf34a6f4a215&o=",
+      "landingURL": "https://www.agoda.com/partners/partnersearch.aspx?cid=1935603&hid=59305878&currency=USD&checkin=2025-01-20&checkout=2025-01-21&NumberofAdults=2&NumberofChildren=0&Rooms=1&pcs=6",
+      "includeBreakfast": true,
+      "freeWifi": false,
+      "latitude": 0.5012199878692627,
+      "longitude": 123.06743621826172
+    }
+  ]
+}
+
+let elemHotel = ''
+GTLOhotels.results.map(hotel => {
+  elemHotel += `<div class="swiper-slide">
+      <div class="card">
+        <div class="wrapper">
+          <img src="${hotel.imageURL}" class="card-img-top" alt="...">
+          <span>${hotel.reviewScore.toFixed(1)}</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">${hotel.hotelName}</h5>
+          <p class="card-text">
+          <div class=""><div class="d-flex" id="theStars">`
+
+  for (let i = 1; i <= hotel.starRating * 2; i++) {
+    elemHotel += i % 2 != 0 ? `<div style="width: .5rem !important; overflow-x: clip;">
+                    <i class="bi bi-star-fill starIcon text-warning"></i>
+                  </div>` : `<div style="width: .5rem !important; overflow-x: clip;">
+                              <i class="bi bi-star-fill starIcon text-warning" style="margin-left:-.5rem"></i>
+                            </div>`
+  }
+  for (let i = 1; i <= 10 - (hotel.starRating * 2); i++) {
+    elemHotel += i % 2 != 0 ? `<div style="width: .5rem !important; overflow-x: clip;">
+                    <i class="bi bi-star-fill starIcon text-dark"></i>
+                  </div>` : `<div style="width: .5rem !important; overflow-x: clip;">
+                              <i class="bi bi-star-fill starIcon text-dark" style="margin-left:-.5rem"></i>
+                            </div>`
+  }
+  elemHotel += `
+          </div>
+          </div>
+            <small>Per malam sebelum pajak</small>
+            <h6>IDR 192.230</h6>
+          </p>
+        </div>
+      </div>
+    </div>
+    `
+})
+$('#data-hotels').find('.swiper-wrapper').append(elemHotel)

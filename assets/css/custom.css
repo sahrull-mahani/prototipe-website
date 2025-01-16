@@ -51,6 +51,7 @@
     border-radius: 20px;
 }
 
+.hotels .swiper-pagination .swiper-pagination-bullet,
 .promo .swiper-pagination .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
@@ -59,6 +60,7 @@
     border: 1px solid var(--accent-color);
 }
 
+.hotels .swiper-pagination .swiper-pagination-bullet-active,
 .promo .swiper-pagination .swiper-pagination-bullet-active {
     background-color: var(--accent-color);
 }
@@ -85,6 +87,7 @@
     background: linear-gradient(90deg, rgba(0, 212, 255, 0) 22%, rgba(255, 255, 255, 1) 42%);
 } */
 
+.hotels .swiper-button-next,
 .promo .swiper-button-next {
     border-radius: 100%;
     background-color: var(--background-color);
@@ -100,15 +103,18 @@
     transition: 0.25s ease-in-out;
 }
 
+.hotels .swiper-button-next:hover,
 .promo .swiper-button-next:hover {
     opacity: 1;
 }
 
+.hotels .swiper-button-next::after,
 .promo .swiper-button-next::after {
     font-size: 30px !important;
     color: var(--bs-info);
 }
 
+.hotels .swiper-button-prev,
 .promo .swiper-button-prev {
     border-radius: 100%;
     background-color: var(--background-color);
@@ -124,10 +130,12 @@
     transition: 0.25s ease-in-out;
 }
 
+.hotels .swiper-button-prev:hover,
 .promo .swiper-button-prev:hover {
     opacity: 1;
 }
 
+.hotels .swiper-button-prev::after,
 .promo .swiper-button-prev::after {
     font-size: 30px !important;
     color: var(--bs-info);
@@ -392,4 +400,62 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+.hotels .swiper {
+    /* width: 600px; */
+    /* height: 300px; */
+    margin-block: 1rem;
+}
+
+.hotels .swiper .swiper-slide .card .wrapper {
+    position: relative;
+}
+
+.hotels .swiper .swiper-slide .card .wrapper img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hotels .swiper .swiper-slide .card .wrapper span {
+    position: absolute;
+    bottom: 0;
+    font-size: 16pt;
+    border-top-right-radius: 10px;
+    border-top: 2px solid #363636;
+    border-right: 2px solid #363636;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: var(--bs-primary);
+    font-weight: bold;
+    color: var(--bs-white);
+}
+
+.hotels .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotels .card-title {
+    font-size: 12pt !important;
+    font-weight: bold;
+}
+
+.hotels h6 {
+    font-weight: bold !important;
+    color: var(--bs-danger);
+    font-size: 19pt;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.starIcon:hover {
+    cursor: pointer;
+}
+
+#theStars {
+    margin: 0 auto;
 }
