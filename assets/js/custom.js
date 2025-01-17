@@ -1481,7 +1481,7 @@ const GTLOhotels = {
   ]
 }
 
-let elemHotel = ''
+let elemHotel = '', itemHotel = ''
 GTLOhotels.results.map(hotel => {
   elemHotel += `<div class="swiper-slide">
       <div class="card">
@@ -1494,8 +1494,24 @@ GTLOhotels.results.map(hotel => {
           <p class="card-text">
           <div class=""><div class="d-flex" id="theStars">`
 
+  itemHotel += `<div class="item ${hotel.includeBreakfast ? 'breakfast' : (hotel.freeWifi ? 'free-wifi' : '')}">
+      <div class="card">
+        <div class="wrapper">
+          <img src="${hotel.imageURL}" class="card-img-top" alt="...">
+        </div>
+        <span>${hotel.reviewScore.toFixed(1)}</span>
+        <div class="card-body">
+          <h5 class="card-title">${hotel.hotelName}</h5>
+          <p class="card-text">
+          <div class=""><div class="d-flex jus" id="theStars">`
+
   for (let i = 1; i <= hotel.starRating * 2; i++) {
     elemHotel += i % 2 != 0 ? `<div style="width: .5rem !important; overflow-x: clip;">
+                    <i class="bi bi-star-fill starIcon text-warning"></i>
+                  </div>` : `<div style="width: .5rem !important; overflow-x: clip;">
+                              <i class="bi bi-star-fill starIcon text-warning" style="margin-left:-.5rem"></i>
+                            </div>`
+    itemHotel += i % 2 != 0 ? `<div style="width: .5rem !important; overflow-x: clip;">
                     <i class="bi bi-star-fill starIcon text-warning"></i>
                   </div>` : `<div style="width: .5rem !important; overflow-x: clip;">
                               <i class="bi bi-star-fill starIcon text-warning" style="margin-left:-.5rem"></i>
@@ -1503,6 +1519,11 @@ GTLOhotels.results.map(hotel => {
   }
   for (let i = 1; i <= 10 - (hotel.starRating * 2); i++) {
     elemHotel += i % 2 != 0 ? `<div style="width: .5rem !important; overflow-x: clip;">
+                    <i class="bi bi-star-fill starIcon text-dark"></i>
+                  </div>` : `<div style="width: .5rem !important; overflow-x: clip;">
+                              <i class="bi bi-star-fill starIcon text-dark" style="margin-left:-.5rem"></i>
+                            </div>`
+    itemHotel += i % 2 != 0 ? `<div style="width: .5rem !important; overflow-x: clip;">
                     <i class="bi bi-star-fill starIcon text-dark"></i>
                   </div>` : `<div style="width: .5rem !important; overflow-x: clip;">
                               <i class="bi bi-star-fill starIcon text-dark" style="margin-left:-.5rem"></i>
@@ -1518,5 +1539,54 @@ GTLOhotels.results.map(hotel => {
       </div>
     </div>
     `
+  itemHotel += `<p class="ms-2 fst-italic text-secondary"><i class="fa fa-location-dot text-primary"></i> Location, Didaerah tertentu</p>
+          </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h6 class="fw-bolder fs-6" style="font-family: Arial;"><p class="py-1 px-2 bg-primary text-white rounded">${hotel.includeBreakfast ? 'Include Breakfast' : (hotel.freeWifi ? 'Free Wifi' : '')}</p></h6>
+            <h6 class="fw-bolder fs-2" style="font-family: Arial;">IDR 192.230</h6>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    `
 })
 $('#data-hotels').find('.swiper-wrapper').append(elemHotel)
+$('.gallery').find('.items').append(itemHotel)
+
+
+
+// # HOTEL MENU
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter .btn');
+  const items = document.querySelectorAll('.item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const category = button.getAttribute('data-filter');
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.opacity = 0;
+
+          setTimeout(() => {
+            item.style.display = 'block';
+            item.style.opacity = 1;
+          }, 500);
+        } else {
+          item.style.opacity = 0;
+
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 500);
+        }
+      });
+    });
+  });
+
+  filterButtons[0].click(); // Show all items by default
+});
